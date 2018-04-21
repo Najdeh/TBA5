@@ -19,6 +19,19 @@ const db = require('./config/database.js');
 const port = process.env.PORT || 8080;
 const app = express();
 
+
+//én részem
+
+///--- engedélyezés az angularra
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+    res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    next();
+});
+
+
+//eddig
 //connect to MongoDb
 mongoose.connect(db.uri, db.options,
     () => {
@@ -28,6 +41,8 @@ mongoose.connect(db.uri, db.options,
         console.log('MongoDB error:' + err);
     }
 )
+
+
 
 // Logging
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);

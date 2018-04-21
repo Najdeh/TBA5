@@ -7,3 +7,13 @@ agm-map {
   padding: 6%;
   border-radius: 20px;
 }
+
+.smpics {
+  margin-top: 5%;
+}
+
+.smpics img {
+  width: 100px;
+  height: 100px;
+  fill: gainsboro;
+}
