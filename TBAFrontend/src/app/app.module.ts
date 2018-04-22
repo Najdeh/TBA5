@@ -3,19 +3,24 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
 
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { ProfilComponent } from './profil/profil.component';
 import { TudasComponent } from './tudas/tudas.component';
 import { RestfulApiComponent } from './restful-api/restful-api.component';
 import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
 import { FrontComponent } from './front/front.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
   { component: FrontComponent, path: 'front' },
   { component: ProfilComponent, path: 'profil' },
   { component: TudasComponent, path: 'tudas' },
   { component: RestfulApiComponent, path: 'restfulapi' },
-  { component: KapcsolatComponent, path: 'kapcsolat' }
+  { component: KapcsolatComponent, path: 'kapcsolat' },
+  { component: RegistrationComponent, path: 'registration' }
 ];
 
 @NgModule({
@@ -25,10 +30,13 @@ const routes: Routes = [
     TudasComponent,
     RestfulApiComponent,
     KapcsolatComponent,
-    FrontComponent
+    FrontComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCK4I3-yXZYYjG1SNmcsn55wABdYfAS7xY'
     }),

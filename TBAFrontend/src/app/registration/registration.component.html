@@ -1,0 +1,14 @@
+<form>
+  <div class="form-group">
+    <input placeholder="Email" name="email" [(ngModel)]="user.email" class="form-control" />
+  </div>
+  <div class="form-group">
+    <input type="username" name="username" placeholder="Felhasználónév" [(ngModel)]="user.username" class="form-control" />
+  </div>
+  <div class="form-group">
+    <input type="password" name="password" placeholder="Jelszó" [(ngModel)]="user.password" class="form-control" />
+  </div>
+  <div class="form-group">
+    <button id="submit" type="submit" (click)="register()">Regisztrálj</button>
+  </div>
+</form>

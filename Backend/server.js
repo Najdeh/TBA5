@@ -60,7 +60,9 @@ app.use(morgan('combined', {
 app.use(helmet());
 
 //enable CORS
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:4200'
+}));
 
 //Body Parser
 app.use(bodyParser.json());

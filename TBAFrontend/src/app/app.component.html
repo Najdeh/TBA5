@@ -10,19 +10,24 @@
       <li class="nav-item">
         <a class="nav-item nav-link" routerLink="profil">Profil</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-item nav-link" routerLink="tudas">TudasBázis</a>
-      </li>
-      <li class="nav-item">
+           <li class="nav-item">
         <a class="nav-item nav-link" routerLink="restfulapi">RESTful API</a>
       </li>
       <li class="nav-item">
         <a class="nav-item nav-link" routerLink="kapcsolat">Kapcsolat</a>
       </li>
+
     </ul>
   </div>
+  <form action="localhost:8080/register" method="post">
+    <input type="text" name="userName" id="userName" [(ngModel)]="userName" placeholder="userName" />
+    <input type="text" name="email" id="email" [(ngModel)]="email" placeholder="email" />
+    <input type="text" name="password" id="password" [(ngModel)]="password" placeholder="password" />
+    <input type="submit" class="btn btn-secondary" (click)="register()" value="Register">
+  </form>
 </nav>
 <br>
+
 
 <!-- <div class="col-4">
       <img class="foodCategories" src="assets/img/lebanese.jpg">

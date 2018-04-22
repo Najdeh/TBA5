@@ -12,5 +12,33 @@ import { checkAndUpdateElementDynamic } from '@angular/core/src/view/element';
 })
 export class AppComponent {
   title = 'app';
+  //én részem
+  url: 'http://localhost:8080'
+  userData: object = {
+    userName: 'String',
+    email: 'String',
+    password: 'String'
+  }
+  datas: any;
+  constructor(public http: Http) {
+  }
 
+  errorHandling(res) {
+    res = JSON.parse(res['_body']);
+    if (res.error) {
+      console.error('API error:' + res.error);
+    }
+    else {
+      this.datas = res;
+    }
+  }
+
+  register() {
+    this.http.post(this.url + '/register', this.userData).subscribe(
+      data => {
+        console.log(data);
+        this.errorHandling(data);
+      });
+  }
+  //eddig
 }
