@@ -92,4 +92,4 @@ app.use('/', userRouter)
 
 //start server
 app.listen(port);
-console.log('The magic happens at port' + port);
+console.log('The magic happens at port ' + port);
