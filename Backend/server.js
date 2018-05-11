@@ -45,16 +45,23 @@ mongoose.connect(db.uri, db.options,
 
 
 // Logging
-fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
-let accessLogStream = rfs('acces.log', {
-    interval: '1d',
-    path: logDirectory
-})
+fs.exists(logDirectory, (valami) => {
+    if (!valami) {
+        fs.mkdirSync(logDirectory)
+    }
 
-app.use(morgan('combined', {
-    stream: accessLogStream,
-    skip: (req, res) => res.statusCode < 400
-}))
+    let accessLogStream = rfs('acces.log', {
+        interval: '1d',
+        path: logDirectory
+    })
+
+
+    app.use(morgan('combined', {
+        stream: accessLogStream,
+        skip: (req, res) => res.statusCode < 400
+    }))
+});
+
 
 //Security
 app.use(helmet());
