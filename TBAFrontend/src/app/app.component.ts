@@ -36,8 +36,12 @@ export class AppComponent {
   }
 
   register() {
+<<<<<<< HEAD
     console.log(this.userData);
     this.http.post('http://localhost:8080/register', this.userData).subscribe(
+=======
+    this.http.post('http://localhost:8080' + '/register', this.userData).subscribe(
+>>>>>>> eed11b992adcbd9875fad567f494b3d91aecd05c
       data => {
         console.log(data);
         this.errorHandling(data);
@@ -51,6 +55,16 @@ export class AppComponent {
       });
   }
 
+<<<<<<< HEAD
+=======
+  login() {
+    this.http.post('http://localhost:8080' + '/login', this.userData, this.options)
+      .subscribe(data => {
+        console.log(data['_body']);
+      });
+  }
+
+>>>>>>> eed11b992adcbd9875fad567f494b3d91aecd05c
   logout() {
     this.http.get('http://localhost:8080' + '/logout', this.options)
       .subscribe(data => {
