@@ -12,6 +12,7 @@ const helmet = require('helmet');
 const cors = require('cors')
 
 const userRouter = require('./route/user.route');
+const restaurantRouter = require('./route/restaurant.route');
 const User = require('./models/user')
 
 const logDirectory = path.join(__dirname, 'log')
@@ -68,6 +69,7 @@ app.use(helmet());
 
 //enable CORS
 app.use(cors({
+    credentials: true, //fontos
     origin: 'http://localhost:4200'
 }));
 
@@ -95,8 +97,9 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //User User router
-app.use('/', userRouter)
+app.use('/', userRouter);
+app.use('/restaurants', restaurantRouter);
 
 //start server
 app.listen(port);
-console.log('The magic happens at port' + port);
+console.log('The magic happens at port ' + port);

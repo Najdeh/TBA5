@@ -22,12 +22,25 @@ module.exports = {
             });
         })
     },
+    /*
+        login: (req, res) => {
+            res.redirect('/');
+        },
+        logout: (req, res) => {
+            req.logout();
+            res.redirect('/')
+        }
+    }
+    */
 
-    login: (req, res) => {
-        res.redirect('/');
-    },
+    login: (req, res) => res.json({
+        success: 'Sikeres belépés',
+    }),
+
     logout: (req, res) => {
         req.logout();
-        res.redirect('/')
-    }
-}
+        res.json({
+            success: 'Sikeres kilépés',
+        });
+    },
+};

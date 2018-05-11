@@ -7,4 +7,5 @@ userRoute.post('/register', User.register);
 userRoute.post('/login', passport.authenticate('local'), User.login);
 userRoute.get('/logout', User.logout)
 
+
 module.exports = userRoute;

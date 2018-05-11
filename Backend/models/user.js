@@ -10,11 +10,7 @@ const userSchema = mongoose.Schema({
         type: String,
         require: true,
         unique: true
-    },
-    blogposts: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Blogpost'
-    },
+    }
 }, {
     timestamps: true
 });

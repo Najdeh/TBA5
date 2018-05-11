@@ -17,7 +17,7 @@ db.createUser(
         pwd: "USERPASSWORD",
         roles:
         [
-            { role: "readWrite", db: "TESTDB" }
+            { role: "readWrite", db: "testDB" }
         ]
         
     }
