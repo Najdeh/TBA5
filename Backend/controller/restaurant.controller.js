@@ -19,5 +19,13 @@ module.exports = {
         })
     },
 
+    addNewBooking: (req, res) => {
+        restaurant.findByIdAndUpdate(req.params.id, req.body, (err, restaurant) => {
+            if (err) {
+                res.send(err)
+            }
+            res.json(restaurant)
+        })
+    },
 
 };

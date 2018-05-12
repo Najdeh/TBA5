@@ -12,12 +12,13 @@
         <div class="container">
           <div class="row">
             <div class="col-6">
-              <h3>Tables to book</h3>
+              <h3>Book for </h3>
               <input type="number" name="tablesToBook" id="" class="form-control text-center" [(ngModel)]="modalCounter">
+              <h3>Person</h3>
             </div>
             <div class="col-6 text-center">
-              <h3>Free tables</h3>
-              <h2>{{actualChoosenResto.freeTables}}</h2>
+              <h3>Free tables :{{actualChoosenResto.freeTables}} </h3>
+              <p>4 Person / Table</p>
             </div>
           </div>
         </div>
@@ -57,10 +58,7 @@
                   </td>
                   <td>{{mrest.price}}</td>
                   <td>{{mrest.freeTables}}</td>
-                  <!-- <td class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-danger">--</button>
-                    <button type="button" class="btn btn-dark">{{mrest.price}}</button>
-                    <button type="button" class="btn btn-success">+</button> </td>-->
+
                   <td>
                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" (click)="choosenResto(mrest)">
                       Book
@@ -70,11 +68,6 @@
                 </tr>
               </tbody>
             </table>
-            <!-- <div *ngFor="let mrest of mexican">
-              <h3>{{mrest.name}}</h3>
-              <button>Book</button>
-              <hr>
-            </div> -->
           </div>
         </div>
       </div>
@@ -87,16 +80,35 @@
 
           </div>
           <div class="side back">
-            <h4>Válassz éttermet</h4>
-            <div *ngFor="let lrest of lebanese">
-              <h1>{{lrest.name}}</h1>
-            </div>
-            <img class="restaurant" src="assets/img/mexico.jpg" alt="mex"> Étterem 1
+            <h4 class="text-center">Lebanese Restaurants</h4>
             <br>
-            <img class="restaurant" src="assets/img/chinese.jpg" alt="mex">
-            <a>Etterem 2</a>
-            <br>
-            <img class="restaurant" src="assets/img/vietnamese.jpg" alt="mex"> Étterem 3</div>
+            <table class="table text-center table-striped">
+              <thead>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Free tables</th>
+                <th>Book a table</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let lrest of lebanese">
+                  <td>
+                    <strong>{{lrest.name}}</strong>
+                  </td>
+                  <td>{{lrest.price}}</td>
+                  <td>{{lrest.freeTables}}</td>
+
+                  <td>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" (click)="choosenResto(lrest)">
+                      Book
+                    </button>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <img class="restaurant" src="" alt="">
+          </div>
         </div>
       </div>
     </div>

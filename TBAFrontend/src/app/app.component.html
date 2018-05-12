@@ -20,42 +20,22 @@
     </ul>
   </div>
   <div *ngIf="!isLoggedin">
-    <form action="" method="post">
-      <input type="text" name="username" id="" [(ngModel)]="userData.username" placeholder="userName" />
-      <input type="text" name="email" id="" [(ngModel)]="userData.email" placeholder="email" *ngIf="!isRegistered" />
-      <input type="text" name="password" id="" [(ngModel)]="userData.password" placeholder="password" />
+    <form class="form-inline" action="" method="post">
+      <input class="form-control" type="text" name="username" id="" [(ngModel)]="userData.username" placeholder="Username" />
+      <input class="form-control" type="text" name="email" id="" [(ngModel)]="userData.email" placeholder="Email" *ngIf="!isRegistered"
+      />
+      <input class="form-control" type="text" name="password" id="" [(ngModel)]="userData.password" placeholder="Password" />
 
       <input type="button" class="btn btn-secondary" (click)="register()" value="Register" *ngIf="!isRegistered">
       <input type="button" class="btn btn-secondary" (click)="login()" value="Login">
     </form>
   </div>
   <div *ngIf="isLoggedin">
+    Logged in
     <input type="button" class="btn btn-secondary" (click)="logout()" value="Logout">
   </div>
 
 </nav>
 <br>
 
-
-<!-- <div class="col-4">
-      <img class="foodCategories" src="assets/img/lebanese.jpg">
-      >
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-4">
-      <img class="foodCategories" src="assets/img/vietnamese.jpg">
-      <div class="centered">vietnamese</div>
-    </div>
-    <div class="col-4">
-      <img class="foodCategories" src="assets/img/turkish.jpg">
-      <div class="centered">turkish</div>
-    </div>
-    <div class="col-4">
-      <img class="foodCategories" src="assets/img/japanese.jpg">
-      <div class="centered">japanese</div>
-    </div>
-  </div>
-</div> -->
 <router-outlet></router-outlet>
