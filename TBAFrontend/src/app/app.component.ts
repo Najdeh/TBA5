@@ -20,6 +20,8 @@ export class AppComponent {
     password: ''
   }
   datas: any;
+  isLoggedin: boolean = false;
+  isRegistered: boolean = false;
 
   options = new RequestOptions({ withCredentials: true });
   constructor(public http: Http) {
@@ -35,14 +37,14 @@ export class AppComponent {
     }
   }
 
+  exportLoggedinValue() {
+    return this.isLoggedin;
+  }
+
   register() {
-<<<<<<< HEAD
-    console.log(this.userData);
-    this.http.post('http://localhost:8080/register', this.userData).subscribe(
-=======
     this.http.post('http://localhost:8080' + '/register', this.userData).subscribe(
->>>>>>> eed11b992adcbd9875fad567f494b3d91aecd05c
       data => {
+        this.isRegistered = true;
         console.log(data);
         this.errorHandling(data);
       });
@@ -51,23 +53,15 @@ export class AppComponent {
   login() {
     this.http.post('http://localhost:8080' + '/login', this.userData, this.options)
       .subscribe(data => {
+        this.isLoggedin = true;
         console.log(data['_body']);
       });
   }
 
-<<<<<<< HEAD
-=======
-  login() {
-    this.http.post('http://localhost:8080' + '/login', this.userData, this.options)
-      .subscribe(data => {
-        console.log(data['_body']);
-      });
-  }
-
->>>>>>> eed11b992adcbd9875fad567f494b3d91aecd05c
   logout() {
     this.http.get('http://localhost:8080' + '/logout', this.options)
       .subscribe(data => {
+        this.isLoggedin = false;
         console.log(data['_body']);
       });
   }

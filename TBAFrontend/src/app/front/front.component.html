@@ -1,4 +1,36 @@
-<h1 class="text-center">Restaurant types:</h1>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Book tables at {{actualChoosenResto.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <h3>Tables to book</h3>
+              <input type="number" name="tablesToBook" id="" class="form-control text-center" [(ngModel)]="modalCounter">
+            </div>
+            <div class="col-6 text-center">
+              <h3>Free tables</h3>
+              <h2>{{actualChoosenResto.freeTables}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="bookTable()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+<h1 class="text-center">
+  Restaurant types:</h1>
 <div class="panel">
   <div class="row">
     <div class="col-4">
@@ -9,13 +41,40 @@
 
           </div>
           <div class="side back">
-            <h4>Válassz éttermet</h4>
-            <img class="restaurant" src="assets/img/mexico.jpg" alt="mex"> Étterem 1
+            <h4 class="text-center">Mexican Restaurants</h4>
             <br>
-            <img class="restaurant" src="assets/img/chinese.jpg" alt="mex">
-            <a>Etterem 2</a>
-            <br>
-            <img class="restaurant" src="assets/img/vietnamese.jpg" alt="mex"> Étterem 3
+            <table class="table text-center table-striped">
+              <thead>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Free tables</th>
+                <th>Book a table</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let mrest of mexican">
+                  <td>
+                    <strong>{{mrest.name}}</strong>
+                  </td>
+                  <td>{{mrest.price}}</td>
+                  <td>{{mrest.freeTables}}</td>
+                  <!-- <td class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-danger">--</button>
+                    <button type="button" class="btn btn-dark">{{mrest.price}}</button>
+                    <button type="button" class="btn btn-success">+</button> </td>-->
+                  <td>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" (click)="choosenResto(mrest)">
+                      Book
+                    </button>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- <div *ngFor="let mrest of mexican">
+              <h3>{{mrest.name}}</h3>
+              <button>Book</button>
+              <hr>
+            </div> -->
           </div>
         </div>
       </div>
@@ -27,7 +86,11 @@
             <img class="foodCategories" src="assets/img/lebanese2.jpg">
 
           </div>
-          <div class="side back"><h4>Válassz éttermet</h4>
+          <div class="side back">
+            <h4>Válassz éttermet</h4>
+            <div *ngFor="let lrest of lebanese">
+              <h1>{{lrest.name}}</h1>
+            </div>
             <img class="restaurant" src="assets/img/mexico.jpg" alt="mex"> Étterem 1
             <br>
             <img class="restaurant" src="assets/img/chinese.jpg" alt="mex">
@@ -44,7 +107,8 @@
             <img class="foodCategories" src="assets/img/chinese2.jpg">
 
           </div>
-          <div class="side back"><h4>Válassz éttermet</h4>
+          <div class="side back">
+            <h4>Válassz éttermet</h4>
             <img class="restaurant" src="assets/img/mexico.jpg" alt="mex"> Étterem 1
             <br>
             <img class="restaurant" src="assets/img/mexico.jpg" alt="mex">

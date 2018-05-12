@@ -14,6 +14,10 @@ const restaurantSchema = mongoose.Schema({
         require: true
 
     },
+    freeTables: {
+        type: Number,
+        require: true
+    },
 
 }, {
     timestamps: true

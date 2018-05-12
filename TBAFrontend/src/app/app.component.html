@@ -19,21 +19,20 @@
 
     </ul>
   </div>
-  <form action="" method="post">
-    <input type="text" name="username" id="" [(ngModel)]="userData.username" placeholder="userName" />
-    <input type="text" name="email" id="" [(ngModel)]="userData.email" placeholder="email" />
-    <input type="text" name="password" id="" [(ngModel)]="userData.password" placeholder="password" />
-<<<<<<< HEAD
+  <div *ngIf="!isLoggedin">
+    <form action="" method="post">
+      <input type="text" name="username" id="" [(ngModel)]="userData.username" placeholder="userName" />
+      <input type="text" name="email" id="" [(ngModel)]="userData.email" placeholder="email" *ngIf="!isRegistered" />
+      <input type="text" name="password" id="" [(ngModel)]="userData.password" placeholder="password" />
 
-    <input type="button" class="btn btn-secondary" (click)="register()" value="Register">
-    <input type="button" class="btn btn-secondary" (click)="login()" value="Login">
+      <input type="button" class="btn btn-secondary" (click)="register()" value="Register" *ngIf="!isRegistered">
+      <input type="button" class="btn btn-secondary" (click)="login()" value="Login">
+    </form>
+  </div>
+  <div *ngIf="isLoggedin">
     <input type="button" class="btn btn-secondary" (click)="logout()" value="Logout">
-=======
-    <input type="submit" class="btn btn-secondary" (click)="register()" value="Register">
-    <input type="submit" class="btn btn-secondary" (click)="login()" value="Login">
-    <input type="submit" class="btn btn-secondary" (click)="logout()" value="Logout">
->>>>>>> eed11b992adcbd9875fad567f494b3d91aecd05c
-  </form>
+  </div>
+
 </nav>
 <br>
 

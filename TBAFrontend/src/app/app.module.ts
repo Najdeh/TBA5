@@ -12,15 +12,14 @@ import { TudasComponent } from './tudas/tudas.component';
 import { RestfulApiComponent } from './restful-api/restful-api.component';
 import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
 import { FrontComponent } from './front/front.component';
-import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
   { component: FrontComponent, path: 'front' },
   { component: ProfilComponent, path: 'profil' },
   { component: TudasComponent, path: 'tudas' },
   { component: RestfulApiComponent, path: 'restfulapi' },
-  { component: KapcsolatComponent, path: 'kapcsolat' },
-  { component: RegistrationComponent, path: 'registration' }
+  { component: KapcsolatComponent, path: 'kapcsolat' }
+
 ];
 
 @NgModule({
@@ -30,8 +29,8 @@ const routes: Routes = [
     TudasComponent,
     RestfulApiComponent,
     KapcsolatComponent,
-    FrontComponent,
-    RegistrationComponent
+    FrontComponent
+
   ],
   imports: [
     BrowserModule,

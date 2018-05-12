@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-=======
-::1 - - [21/Apr/2018:07:55:59 +0000] "POST /login HTTP/1.1" 401 - "-" "PostmanRuntime/7.1.1"
-::1 - - [22/Apr/2018:17:10:04 +0000] "GET /users HTTP/1.1" 404 144 "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36"
-::1 - - [22/Apr/2018:17:10:08 +0000] "GET /register HTTP/1.1" 404 147 "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36"
-::1 - - [10/May/2018:15:00:03 +0000] "GET /register HTTP/1.1" 404 147 "-" "PostmanRuntime/7.1.1"
->>>>>>> eed11b992adcbd9875fad567f494b3d91aecd05c
